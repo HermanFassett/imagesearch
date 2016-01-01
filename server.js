@@ -4,6 +4,7 @@ var mongoose = require("mongoose");
 var path = require("path");
 var session = require('express-session');
 var bodyParser = require('body-parser');
+require('dotenv').load();
 // Require handler
 var SearchHandler = require(path.dirname() + '/controllers/searchHandler.js');
 // Init urlHandler
@@ -28,7 +29,8 @@ app.get("/", function(req, res) {
 });
 
 // Get keyword route
-app.get("/:keyword", searchHandler.getImages);
+app.get("/search/:keyword", searchHandler.getImages);
+app.get("/latest/searches", searchHandler.getLatest);
 
 // Listen on default port or 8080
 app.listen(process.env.PORT || 8080);
