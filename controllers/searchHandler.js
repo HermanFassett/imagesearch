@@ -23,7 +23,7 @@ function SearchHandler () {
 				}
 				Searches.findOneAndUpdate({}, {$push: {"latest": {"query": keyword, "date": new Date()}}}, {safe: true, upsert: true},
 			    function(err, model) {
-			        console.log(err);
+			        if (err) console.log(err);
 			    }
 				);
 			  res.json(ret);
