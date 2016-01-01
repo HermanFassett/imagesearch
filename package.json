@@ -1,12 +1,12 @@
 {
-  "name": "shurli",
+  "name": "imagesearch",
   "version": "1.0.1",
-  "description": "A URL shortener API",
+  "description": "Basejump: Image Search Abstraction Layer",
   "main": "server.js",
-  "homepage": "https://shurli.herokuapp.com/",
+  "homepage": "https://imagesearch-al.herokuapp.com/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/HermanFassett/shurli.git"
+    "url": "https://github.com/HermanFassett/imagesearch.git"
   },
   "keywords": [
     "MongoDB",

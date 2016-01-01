@@ -5,9 +5,9 @@ var path = require("path");
 var session = require('express-session');
 var bodyParser = require('body-parser');
 // Require handler
-var UrlHandler = require(path.dirname() + '/controllers/urlHandler.js');
+var SearchHandler = require(path.dirname() + '/controllers/searchHandler.js');
 // Init urlHandler
-var urlHandler = new UrlHandler();
+var searchHandler = new SearchHandler();
 // Init app
 var app = express();
 // Get db uri
@@ -27,10 +27,8 @@ app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname + "/client/index.html"));
 });
 
-// New short url route
-app.get("/new/:url*", urlHandler.addUrl);
-// Get url route
-app.get("/:url*", urlHandler.getUrl);
+// Get keyword route
+app.get("/:keyword", searchHandler.getImages);
 
-// Listen on default port or 5000
+// Listen on default port or 8080
 app.listen(process.env.PORT || 8080);
