@@ -1,6 +1,5 @@
 // Require models
 var Searches = require("../models/searches.js");
-var request = require('request');
 var Bing = require('node-bing-api')({ accKey: "jkY/o5mmGwmiNAJiEA3WpV+DvXer4IzWIsaXQ6b6TGI" });
 var http = require('http');
 
@@ -36,7 +35,6 @@ function SearchHandler () {
 			if (err) res.json({"error": "No searches made"});
 			else res.json(result.latest);
 		});
-		//res.send("To be implemented.");
 	}
 }
 module.exports = SearchHandler;
