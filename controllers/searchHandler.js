@@ -32,7 +32,7 @@ function SearchHandler () {
 		});
 	}
 	this.getLatest = function(req, res) {
-		Searches.find({}, function(err, result) {
+		Searches.findOne({}, function(err, result) {
 			if (err) res.json({"error": "No searches made"});
 			else res.json(result.latest);
 		});
